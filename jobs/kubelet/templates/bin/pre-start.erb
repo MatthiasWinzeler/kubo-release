@@ -41,7 +41,7 @@ update_vsphere_vms() {
   export no_proxy=<%= no_proxy %>
 <% end %>
 
-   /var/vcap/packages/govc/bin/govc vm.change -e 'disk.enableUUID=1' -vm.ip=<%= spec.ip %>
+   #/var/vcap/packages/govc/bin/govc vm.change -e 'disk.enableUUID=1' -vm.ip=<%= spec.ip %>
 }
 
 main() {
