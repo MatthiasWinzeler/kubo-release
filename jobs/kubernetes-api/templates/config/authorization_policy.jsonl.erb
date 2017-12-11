@@ -22,16 +22,5 @@ policy.to_json
 {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"route-sync", "namespace": "*", "resource": "namespaces", "readonly": true}}
 {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user":"route-sync", "namespace": "*", "resource": "nodes", "readonly": true}}
 <% p("additional_policies", []).each do |policy| %>
-policy = {
-  "apiVersion" => "abac.authorization.kubernetes.io/v1beta1",
-  "kind"       => "Policy",
-  "spec"       => {
-    "user"            => "<%= policy['token'] %>",
-    "namespace"       => "<%= policy['namespace'] %>",
-    "resource"        => "<%= policy['resource'] %>",
-    "apiGroup"        => "<%= policy['apiGroup'] %>",
-    "nonResourcePath" => "<%= policy['nonResourcePath'] %>"
-  }
-}
-policy.to_json
+{"apiVersion": "abac.authorization.kubernetes.io/v1beta1","kind":"Policy", "spec": {"user":"<%= policy['user'] %>", "namespace":"<%= policy['namespace'] %>", "resource": "<%= policy['resource'] %>", "apiGroup": "<%= policy['apiGroup'] %>", "nonResourcePath":  "<%= policy['nonResourcePath'] %>"}}
 <% end %>
