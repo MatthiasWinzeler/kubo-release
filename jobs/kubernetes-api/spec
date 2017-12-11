@@ -40,6 +40,12 @@ properties:
     description: http_proxy env var for the kubernetes-api binary (i.e. for cloud provider interactions)
   no_proxy:
     description: no_proxy env var for the kubernetes-api binary (i.e. for cloud provider interactions)
+  additional_tokens:
+    description: additional users to be added to the static auth token file 
+    default: []
+  additional_policies:
+    description: additional policies to be added to the static policy.jsonl
+    default: []
 
 consumes:
 - name: etcd

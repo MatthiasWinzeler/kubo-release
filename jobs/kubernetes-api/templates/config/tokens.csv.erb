@@ -3,3 +3,7 @@
 "<%= p("kube-proxy-password") %>",kube-proxy,kube-proxy
 "<%= p("kube-scheduler-password") %>",kube-scheduler,kube-scheduler
 "<%= p("route-sync-password") %>",route-sync,route-sync
+"<%= p("pocuser-password") %>","<%= p("pocuser-username") %>","<%= p("pocuser-username") %>"
+<% p("additional_tokens", []).each do |token| %>
+"<%= token['token'] %>","<%= token['username'] %>","<%= token['usergroup'] %>"
+<% end %>
